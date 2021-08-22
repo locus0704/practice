@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noticeMapper">
+	<resultMap id="resultNotice" type="Notice">
+		<result property="noticeno" column="noticeno" />
+		<result property="noticetitle" column="noticetitle" />
+		<result property="noticecontent" column="noticecontent" />
+		<result property="noticedate" column="noticedate" />
+		<result property="original_filepath" column="original_filepath" />
+		<result property="rename_filepath" column="rename_filepath" />
+		<result property="noticewriter" column="noticewriter" />
+	</resultMap>
+
+	<select id="selectList" resultMap="resultNotice">
+		SELECT * FROM NOTICE ORDER BY NOTICENO DESC
+	</select>
+
+	<select id="selectOne" parameterType="int" resultMap="resultNotice">
+		SELECT * FROM NOTICE WHERE NOTICENO=#{noticeno}
+	</select>
+
+	<insert id="insertNotice" parameterType="Notice">
+		insert into notice values ((select max(noticeNo) + 1 from notice), #{noticetitle}, 
+			sysdate, #{noticewriter}, #{noticecontent}, #{original_filepath, jdbcType=VARCHAR}, #{rename_filepath, jdbcType=VARCHAR})
+	</insert>
+
+	<update id="updateNotice" parameterType="Notice">
+		UPDATE NOTICE SET NOTICETITLE = #{noticetitle}, NOTICEWRITER = #{noticewriter}, 
+		NOTICECONTENT = #{noticecontent}, NOTICEDATE = sysdate, 
+		ORIGINAL_FILEPATH = #{original_filepath}, 
+		RENAME_FILEPATH = #{rename_filepath} 
+		where NOTICENO = #{noticeno}
+	</update>
+
+	<delete id="deleteNotice" parameterType="int">
+		DELETE FROM NOTICE WHERE NOTICENO = #{noticeno}
+	</delete>
+
+	<select id="selectNewTop3" resultMap="resultNotice">
+		SELECT * 
+		FROM (SELECT ROWNUM RNUM, NOTICENO, NOTICETITLE, NOTICEDATE 
+		  FROM ( SELECT * 
+				 FROM NOTICE 
+	             ORDER BY NOTICEDATE DESC)) 
+		WHERE RNUM BETWEEN 1 AND 3
+	</select>
+
+</mapper>
+ 

@@ -1,0 +1,59 @@
+[13:01:07][INFO ][ContextLoader.java:271] - Root WebApplicationContext: initialization started
+[13:01:14][INFO ][ContextLoader.java:307] - Root WebApplicationContext initialized in 7540 ms
+[13:01:14][INFO ][FrameworkServlet.java:525] - Initializing Servlet 'appServlet'
+[13:01:26][INFO ][FrameworkServlet.java:547] - Completed initialization in 11290 ms
+[13:01:39][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[13:01:39][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[13:02:59][INFO ][MemberController.java:62] - login.do : Member [userid=admin, userpwd=admin, username=null, gender=null, age=0, phone=null, email=null, hobby=null, etc=null, enroll_date=null, lastmodified=null, login_ok=null, admin=null]
+[13:03:04][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[13:03:04][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[13:07:08][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[13:07:08][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[14:26:39][INFO ][ContextLoader.java:271] - Root WebApplicationContext: initialization started
+[14:26:43][INFO ][ContextLoader.java:307] - Root WebApplicationContext initialized in 4219 ms
+[14:26:44][INFO ][FrameworkServlet.java:525] - Initializing Servlet 'appServlet'
+[14:26:47][INFO ][FrameworkServlet.java:547] - Completed initialization in 3637 ms
+[14:27:39][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[14:27:39][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[14:28:56][INFO ][ContextLoader.java:271] - Root WebApplicationContext: initialization started
+[14:29:00][INFO ][ContextLoader.java:307] - Root WebApplicationContext initialized in 4237 ms
+[14:29:00][INFO ][FrameworkServlet.java:525] - Initializing Servlet 'appServlet'
+[14:29:04][INFO ][FrameworkServlet.java:547] - Completed initialization in 3675 ms
+[14:50:20][INFO ][ContextLoader.java:271] - Root WebApplicationContext: initialization started
+[14:50:24][INFO ][ContextLoader.java:307] - Root WebApplicationContext initialized in 4126 ms
+[14:50:25][INFO ][FrameworkServlet.java:525] - Initializing Servlet 'appServlet'
+[14:50:28][INFO ][FrameworkServlet.java:547] - Completed initialization in 3613 ms
+[14:50:40][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[14:50:40][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[15:11:32][INFO ][ContextLoader.java:271] - Root WebApplicationContext: initialization started
+[15:11:36][INFO ][ContextLoader.java:307] - Root WebApplicationContext initialized in 4065 ms
+[15:11:36][INFO ][FrameworkServlet.java:525] - Initializing Servlet 'appServlet'
+[15:11:39][INFO ][FrameworkServlet.java:547] - Completed initialization in 3564 ms
+[15:11:47][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[15:11:47][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[15:42:54][INFO ][ContextLoader.java:271] - Root WebApplicationContext: initialization started
+[15:43:01][INFO ][ContextLoader.java:307] - Root WebApplicationContext initialized in 6590 ms
+[15:43:01][INFO ][FrameworkServlet.java:525] - Initializing Servlet 'appServlet'
+[15:43:07][INFO ][FrameworkServlet.java:547] - Completed initialization in 5498 ms
+[15:43:26][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[15:43:26][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[15:43:41][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[15:43:41][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[15:43:46][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[15:43:46][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[15:43:56][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[15:43:56][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[16:07:15][INFO ][ContextLoader.java:271] - Root WebApplicationContext: initialization started
+[16:07:19][INFO ][ContextLoader.java:307] - Root WebApplicationContext initialized in 4139 ms
+[16:07:20][INFO ][FrameworkServlet.java:525] - Initializing Servlet 'appServlet'
+[16:07:23][INFO ][FrameworkServlet.java:547] - Completed initialization in 3607 ms
+[16:07:28][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[16:07:28][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[16:07:42][INFO ][TestController.java:30] - 전송온 암호 : wndus
+[16:07:42][INFO ][TestController.java:33] - 암호화된 패스워드 : $2a$10$5UnKXYZ6BtQ0b0fvmeeI..m8UAet6S7xf/C9WEfKc.YdA0vx0tOrK, 글자수 : 60
+[16:07:42][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[16:07:42][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
+[16:08:56][INFO ][TestController.java:30] - 전송온 암호 : password0904
+[16:08:56][INFO ][TestController.java:33] - 암호화된 패스워드 : $2a$10$dk3BPVCdPhQLVyAK1qFpj.LIsV5Orzh0.ptIND/wtnFUk1E1vYCBW, 글자수 : 60
+[16:08:56][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/ntop3.do
+[16:08:56][WARN ][DispatcherServlet.java:1251] - No mapping for GET /firstspring/btop3.do
