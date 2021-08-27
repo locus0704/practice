@@ -18,15 +18,15 @@ public class Notice implements java.io.Serializable {
 	public Notice() {}
 
 	public Notice(int noticeno, String noticetitle, Date noticedate, String noticewriter, String noticecontent,
-			String originalfilepath, String renamefilepath) {
+			String original_filepath, String rename_filepath) {
 		super();
 		this.noticeno = noticeno;
 		this.noticetitle = noticetitle;
 		this.noticedate = noticedate;
 		this.noticewriter = noticewriter;
 		this.noticecontent = noticecontent;
-		this.original_filepath = originalfilepath;
-		this.rename_filepath = renamefilepath;
+		this.original_filepath = original_filepath;
+		this.rename_filepath = rename_filepath;
 	}
 
 	public int getNoticeno() {
@@ -92,8 +92,8 @@ public class Notice implements java.io.Serializable {
 	@Override
 	public String toString() {
 		return "Notice [noticeno=" + noticeno + ", noticetitle=" + noticetitle + ", noticedate=" + noticedate
-				+ ", noticewriter=" + noticewriter + ", noticecontent=" + noticecontent + ", originalfilepath="
-				+ original_filepath + ", renamefilepath=" + rename_filepath + "]";
+				+ ", noticewriter=" + noticewriter + ", noticecontent=" + noticecontent + ", original_filepath="
+				+ original_filepath + ", rename_filepath=" + rename_filepath + "]";
 	}
 
 	

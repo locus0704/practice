@@ -57,7 +57,7 @@
 	</select>
 
 	<select id="selectSearchEnrollDate" 
-	parameterType="com.test.firstspring.member.model.vo.SearchDate" resultMap="resultMember">
+	parameterType="SearchDate" resultMap="resultMember">
 		select * from member 
 		where enroll_date between #{ begin } and #{ end }
 	</select>

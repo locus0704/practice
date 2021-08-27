@@ -66,7 +66,7 @@ hr { clear: both; }
 	<li><a href="${pageContext.servletContext.contextPath }/nlist.do">공지사항</a></li>
 	<li><a href="${pageContext.servletContext.contextPath }/blist.do?page=1">게시글</a></li>
 	<li><a href="${pageContext.servletContext.contextPath }/moveCrypto.do">암호화테스트</a></li>
-	<li><a href="${pageContext.servletContext.contextPath }/views/test_api/testList.html">테스트</a></li>
+	<li><a href="${pageContext.servletContext.contextPath }/moveTest.do">테스트</a></li>
 	<li><a href="${pageContext.servletContext.contextPath }/main.do">홈</a></li>
 </ul>
 </c:if>
@@ -74,7 +74,7 @@ hr { clear: both; }
 <c:if test="${!empty sessionScope.loginMember and loginMember.admin eq 'Y'}">
 <ul id="menubar">
 	<li><a href="${pageContext.servletContext.contextPath }/mlist.do">회원관리</a></li>
-	<li><a href="${pageContext.servletContext.contextPath }/nlistad.do">공지사항관리</a></li>
+	<li><a href="${pageContext.servletContext.contextPath }/nlist.do">공지사항관리</a></li>
 	<li><a href="${pageContext.servletContext.contextPath }/blist.do?page=1">게시글관리</a></li>
 	<li><a href="${pageContext.servletContext.contextPath }/views/test_api/testList.html">테스트</a></li>
 	<li><a href="${pageContext.servletContext.contextPath }/main.do">홈</a></li>

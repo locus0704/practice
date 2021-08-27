@@ -1,4 +1,4 @@
-package com.test.firstspring.member.model.vo;
+package com.test.firstspring.common;
 
 import java.sql.Date;
 

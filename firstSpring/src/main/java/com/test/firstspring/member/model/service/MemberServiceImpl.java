@@ -4,11 +4,10 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import com.test.firstspring.common.SearchDate;
 import com.test.firstspring.member.model.dao.MemberDao;
 import com.test.firstspring.member.model.vo.Member;
-import com.test.firstspring.member.model.vo.SearchDate;
 
 @Service("memberService")	//MemberService memberService = new MemberService()
 public class MemberServiceImpl implements MemberService{

@@ -18,6 +18,12 @@
 		<result property="board_readcount" column="BOARD_READCOUNT" />
 		<result property="board_date" column="BOARD_DATE" />
 	</resultMap>
+	
+	<resultMap type="Board" id="resultTop3">
+		<result column="board_num" property="board_num"/>
+		<result column="board_title" property="board-title"/>
+		<result column="board_readcount" property="board_readcount"/>
+	</resultMap>
 		
 	<select id="selectTop3" resultMap="resultBoard">
 		SELECT * FROM (SELECT ROWNUM RNUM, BOARD_NUM, BOARD_TITLE, BOARD_READCOUNT
@@ -40,7 +46,7 @@
 		select count(*) from board
 	</select>
 	
-	<select id="selectList" parameterType="com.test.firstspring.board.model.vo.Paging" resultMap="resultBoard">
+	<select id="selectList" parameterType="Paging" resultMap="resultBoard">
 		SELECT * FROM (SELECT ROWNUM RNUM, BOARD_NUM, BOARD_TITLE, BOARD_WRITER,  
 		                BOARD_ORIGINAL_Filename, BOARD_RENAME_Filename,  
 		                BOARD_DATE, board_reply_lev, BOARD_REF, BOARD_REPLY_REF,  
@@ -53,19 +59,12 @@
 
 	<insert id="insertOriginBoard" parameterType="Board">
 		insert into board values (
-		(select max(board_num) + 1 from board),
-		#{ board_writer }, 
-		#{ board_title}, 
-		#{ board_content}, 
-		#{ board_original_filename, jdbcType=VARCHAR }, 
+		(select max(board_num) + 1 from board), #{ board_writer },  #{ board_title}, 
+		#{ board_content},  #{ board_original_filename, jdbcType=VARCHAR }, 
 		#{ board_rename_filename, jdbcType=VARCHAR }, 
 		(select max(board_num) + 1 from board), 
-		null, 
-		1, 
-		default, 
-		default,
-		sysdate
-		)
+		null,  1,  default,  default, sysdate )
+		<if test="board_original_filename == null"></if>
 	</insert>
 
 	<update id="updateOrigin" parameterType="Board">
@@ -84,11 +83,19 @@
 		where board_num = #{ board_num }
 	</update>
 
-	<update id="updateReplySeq" parameterType="Board" >
+	<update id="updateReplySeq1" parameterType="Board" >
 		update board 
 		set board_reply_seq = board_reply_seq + 1 
 		where board_ref = #{ board_ref } 
 		and board_reply_lev = #{ board_reply_lev }
+	</update>
+	
+	<update id="updateReplySeq2" parameterType="Board" >
+		update board 
+		set board_reply_seq = board_reply_seq + 1 
+		where board_ref = #{ board_ref } 
+		and board_reply_lev = #{ board_reply_lev }
+		and board_reply_ref = #{board_reply_ref}
 	</update>
 
 	<insert id="insertReplyBoard" parameterType="Board">
@@ -105,8 +112,7 @@
 			2, 
 			#{board_reply_seq}, 
 			(select max(board_num) + 1 from board), 
-			sysdate) 
-			
+			sysdate) 		
 		</if>
 
 		<if test="boardLevel == 3">
@@ -128,8 +134,17 @@
 	</insert>
 
 	<delete id="deleteBoard" parameterType="Board">
-		delete from board where
-				board_num = #{ board_num }
+		delete from board 
+		<if test="board_reply_lev == 0">
+			where board_ref = #{board_num}
+		</if>
+		<if test="board_reply_lev == 1">
+			where board_num = #{ board_num }
+		</if>
+		<if test="board_reply_lev == 2">
+			where board_num = #{board_num}
+		</if>
+		
 	</delete>
 	
 	

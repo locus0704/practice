@@ -7,8 +7,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.test.firstspring.common.SearchDate;
 import com.test.firstspring.member.model.vo.Member;
-import com.test.firstspring.member.model.vo.SearchDate;
 
 @Repository("memberDao")
 public class MemberDao {
@@ -17,7 +17,7 @@ public class MemberDao {
 	private SqlSessionTemplate session;	//Spring DI
 	
 	public Member selectLogin(Member member) {
-		System.out.println("dao : " + member);
+		//System.out.println("dao : " + member);
 		return session.selectOne("memberMapper.selectLogin", member);
 	}
 	

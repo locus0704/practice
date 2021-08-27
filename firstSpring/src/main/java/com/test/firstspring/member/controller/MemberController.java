@@ -21,9 +21,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.test.firstspring.common.SearchDate;
 import com.test.firstspring.member.model.service.MemberService;
 import com.test.firstspring.member.model.vo.Member;
-import com.test.firstspring.member.model.vo.SearchDate;
 
 @Controller
 public class MemberController {

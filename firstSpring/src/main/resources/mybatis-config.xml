@@ -4,10 +4,16 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!-- config는 jdbc.properties의 역할을 하므로 딱 한개만 만들어짐 -->
 <configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+		<setting name="cacheEnabled" value="false"/>
+	</settings>
 	<typeAliases>
 		<typeAlias type="com.test.firstspring.member.model.vo.Member" alias="Member" />
 		<typeAlias type="com.test.firstspring.notice.model.vo.Notice" alias="Notice" />
 		<typeAlias type="com.test.firstspring.board.model.vo.Board" alias="Board" />
+		<typeAlias type="com.test.firstspring.common.SearchDate" alias="SearchDate"/>
+		<typeAlias type="com.test.firstspring.common.Paging" alias="Paging"/>
 	</typeAliases>
 	
 	<mappers>

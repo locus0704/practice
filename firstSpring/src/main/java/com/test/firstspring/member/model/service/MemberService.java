@@ -2,8 +2,8 @@ package com.test.firstspring.member.model.service;
 
 import java.util.ArrayList;
 
+import com.test.firstspring.common.SearchDate;
 import com.test.firstspring.member.model.vo.Member;
-import com.test.firstspring.member.model.vo.SearchDate;
 
 public interface MemberService {
 	Member selectLogin(Member member);

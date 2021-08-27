@@ -19,10 +19,33 @@
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="order" value="1"/>
+	</beans:bean>
+	
+	<!-- 컨트롤러 리턴한 json 객체 출력용 뷰 클래스임
+		메이븐 dependency 로 다운받은 라이브러리가 제공함 -->
+	<beans:bean id="jsonView"
+		class="net.sf.json.spring.web.servlet.view.JsonView">
+	</beans:bean>
+	
+	<!-- 파일업로드용 클래스 등록 : 파일 전송 용량 지정 -->
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="10000000"/>
+	</beans:bean>
+	
+	<!-- 파일 다운을 위한 뷰리졸버 등록 (JsonView 도 해당됨)
+		주의 : id 속성을 지정하지 않음
+		여러 개의 뷰리졸버를 지정할 때는 실행 순서를 정해햐 함
+		파일 다운 뷰리졸버가 반드시 맨처음 실행되게 순서를 지정해야 함
+		컨트롤러 메소드가 리턴하는 뷰이름과 일치하는 뷰클래스가 있으면 자동으로 해당 뷰클래스(파일다운로드 처리용 뷰클래스)를 실행하게 됨 -->
+	<beans:bean
+		class="org.springframework.web.servlet.view.BeanNameViewResolver">
+	<beans:property name="order" value="0"/>
+	<!-- 제일 먼저 실행되도록 순서 지정 -->
 	</beans:bean>
 	
 	<context:component-scan base-package="com.test.firstspring" />
-	
-	
+
 	
 </beans:beans>

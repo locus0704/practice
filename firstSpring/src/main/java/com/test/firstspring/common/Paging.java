@@ -1,4 +1,4 @@
-package com.test.firstspring.board.model.vo;
+package com.test.firstspring.common;
 
 public class Paging implements java.io.Serializable{
 	private static final long serialVersionUID = 998L;

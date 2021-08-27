@@ -58,7 +58,7 @@ div#loginBox button {
 		//최근 등록된 공지글 3개 전송받아서 출력되게 함
 		$.ajax({
 			url : "ntop3.do",
-			type : "get",
+			type : "post",
 			dataType : "json",
 			success : function(data) {
 				console.log("success : " + data);
@@ -71,13 +71,13 @@ div#loginBox button {
 				values = "";
 				for ( var i in json.list) {
 					values += "<tr><td>"
-							+ json.list[i].no
-							+ "</td><td><a href='/testel/ndetail?noticeno="
-							+ json.list[i].no
+							+ json.list[i].noticeno
+							+ "</td><td><a href='ndetail.do?noticeno="
+							+ json.list[i].noticeno
 							+ "'>"
-							+ decodeURIComponent(json.list[i].title).replace(
+							+ decodeURIComponent(json.list[i].noticetitle).replace(
 									/\+/gi, " ") + "</a></td><td>"
-							+ json.list[i].date + "</td></tr>";
+							+ json.list[i].noticedate + "</td></tr>";
 				}
 
 				$('#newnotice').html($('#newnotice').html() + values);
@@ -91,7 +91,7 @@ div#loginBox button {
 		//조회수 많은 인기 게시글 상위 3개 조회 출력
 		$.ajax({
 			url : "btop3.do",
-			type : "get",
+			type : "post",
 			dataType : "json",
 			success : function(data) {
 				console.log("success : " + data);
@@ -104,13 +104,13 @@ div#loginBox button {
 				values = "";
 				for ( var i in json.list) {
 					values += "<tr><td>"
-							+ json.list[i].bnum
-							+ "</td><td><a href='/testel/bdetail?bnum="
-							+ json.list[i].bnum
+							+ json.list[i].board_num
+							+ "</td><td><a href='bdetail.do?board_num="
+							+ json.list[i].board_num
 							+ "'>"
-							+ decodeURIComponent(json.list[i].btitle).replace(
+							+ decodeURIComponent(json.list[i].board_title).replace(
 									/\+/gi, " ") + "</a></td><td>"
-							+ json.list[i].rcount + "</td></tr>";
+							+ json.list[i].board_readcount + "</td></tr>";
 				}
 
 				$('#toplist').html($('#toplist').html() + values);
