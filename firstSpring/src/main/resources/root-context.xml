@@ -59,6 +59,7 @@
 		</tx:attributes>
 	</tx:advice>
 	<tx:annotation-driven transaction-manager="transactionManager" />
+	
 	<aop:config proxy-target-class="true">
 		<aop:pointcut
 			expression="execution(* com.test.firstspring..*Impl.*(..))"

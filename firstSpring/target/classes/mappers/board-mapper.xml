@@ -52,8 +52,8 @@
 		                BOARD_DATE, board_reply_lev, BOARD_REF, BOARD_REPLY_REF,  
 		                BOARD_REPLY_SEQ, BOARD_READCOUNT, board_content 
 		                FROM (SELECT * FROM BOARD 
-		                ORDER BY BOARD_REF DESC, BOARD_REPLY_REF DESC, 
-		                board_reply_lev ASC, BOARD_REPLY_SEQ ASC)) 
+		                ORDER BY BOARD_REF DESC, board_reply_lev ASC 
+		                , BOARD_REPLY_REF DESC, BOARD_REPLY_SEQ ASC)) 
 		                WHERE RNUM <![CDATA[>=]]> #{startRow} AND RNUM <![CDATA[<=]]> #{endRow}
 	</select>
 
@@ -99,7 +99,7 @@
 	</update>
 
 	<insert id="insertReplyBoard" parameterType="Board">
-		<if test="boardLevel == 2">
+		<if test="board_reply_lev == 2">
 		insert into board values (
 			(select max(board_num) + 1 from board),
 			#{board_writer},
@@ -108,14 +108,14 @@
 			null, 
 			null,
 			#{board_ref},
-			default,
+			(select max(board_num) + 1 from board), 
 			2, 
 			#{board_reply_seq}, 
-			(select max(board_num) + 1 from board), 
+			default,
 			sysdate) 		
 		</if>
 
-		<if test="boardLevel == 3">
+		<if test="board_reply_lev == 3">
 		insert into board values (
 		(select max(board_num) + 1 from board),
 		#{board_writer}, 
@@ -123,11 +123,11 @@
 		#{board_content}, 
 		null, 
 		null,
-		default
 		#{board_ref},
-		#{board_reply_ref}, 
+		#{board_num}, 
 		3,
 		#{board_reply_seq}, 
+		default,
 		sysdate
 		)
 		</if>
@@ -135,13 +135,13 @@
 
 	<delete id="deleteBoard" parameterType="Board">
 		delete from board 
-		<if test="board_reply_lev == 0">
+		<if test="board_reply_lev == 1">
 			where board_ref = #{board_num}
 		</if>
-		<if test="board_reply_lev == 1">
-			where board_num = #{ board_num }
-		</if>
 		<if test="board_reply_lev == 2">
+			where board_reply_ref = #{ board_num }
+		</if>
+		<if test="board_reply_lev == 3">
 			where board_num = #{board_num}
 		</if>
 		

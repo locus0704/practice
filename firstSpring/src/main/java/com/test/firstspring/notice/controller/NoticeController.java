@@ -138,7 +138,7 @@ public class NoticeController {
 		String savePath = request.getSession().getServletContext().getRealPath("resources/notice_upfiles");
 
 		// 첨부파일이 있을때만 업로드된 파일을 지정 폴더로 옮기기
-		if (mfile != null) {
+		if (!mfile.isEmpty()) {
 			String fileName = mfile.getOriginalFilename();
 			if (fileName != null && fileName.length() > 0) {
 				try {

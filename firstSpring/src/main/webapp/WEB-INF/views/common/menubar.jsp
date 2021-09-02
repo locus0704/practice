@@ -67,6 +67,7 @@ hr { clear: both; }
 	<li><a href="${pageContext.servletContext.contextPath }/blist.do?page=1">게시글</a></li>
 	<li><a href="${pageContext.servletContext.contextPath }/moveCrypto.do">암호화테스트</a></li>
 	<li><a href="${pageContext.servletContext.contextPath }/moveTest.do">테스트</a></li>
+	<li><a href="${pageContext.servletContext.contextPath }/moveAop.do">AOP란?</a></li>
 	<li><a href="${pageContext.servletContext.contextPath }/main.do">홈</a></li>
 </ul>
 </c:if>

@@ -53,6 +53,11 @@ public class TestController {
 	public String moveTestPage() {
 		return "test/testPage";
 	}
+	
+	@RequestMapping("moveAop.do")
+	public String moveAOPPage() {
+		return "test/testAOPPage";
+	}
 
 	// 패스워드 암호화 테스트-------------------------------------------------------
 	@RequestMapping(value = "bcrypto.do", method = RequestMethod.POST)
