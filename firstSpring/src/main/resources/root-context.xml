@@ -51,8 +51,7 @@
 	<!-- service 에서 필요한 시점에서 commit/rollback 이 구동되게 aop 설정 처리 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
-			<tx:method name="select*" read-only="true"
-				rollback-for="Exception" />
+			<tx:method name="select*" read-only="true" rollback-for="Exception" />
 			<tx:method name="insert*" rollback-for="Exception" />
 			<tx:method name="update*" rollback-for="Exception" />
 			<tx:method name="delete*" rollback-for="Exception" />
